@@ -1,0 +1,21 @@
+{
+  "name": "gridy",
+  "version": "0.0.0",
+  "description": "Arrange items in grid",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/setup.js tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kojo-caesar/gridy.git"
+  },
+  "author": "kojo",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/kojo-caesar/gridy/issues"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1"
+  }
+}
