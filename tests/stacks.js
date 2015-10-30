@@ -102,6 +102,26 @@ describe('Grid', function() {
       });
     });
   });
+  describe('with 8 stacks x 4 elements', function() {
+    it('should place each stack on a row', function() {
+      var grid = new Grid(_.times(8 * 4, function(i) {
+        return {id: i, stack: parseInt(i / 4)};
+      }));
+
+      var p = {}, width = 100 / 4, height = 100 / 8, i;
+      for (i = 0; i < 8 * 4; i++) {
+        p[i] = [
+          i % 4 * width,
+          parseInt(i / 4) * height,
+          width,
+          height
+        ];
+      }
+
+      expect(grid).to.have.positions(p);
+      console.log(p);
+    });
+  });
   describe('with 11 stacks x 4 elements', function() {
     it('should place 8 on the left and 3 on the right', function() {
       var grid = new Grid(_.times(11 * 4, function(i) {
