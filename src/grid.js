@@ -127,11 +127,9 @@ function Grid(items) {
 
         // Fitting itemCount into a square
         var nextClosestSqrt = getNextClosestSqrt(itemCount);
-<<<<<<< HEAD
+
         //console.log(nextClosestSqrt);
-=======
-        console.log(nextClosestSqrt);
->>>>>>> iss#1
+
         if(stackCount <= nextClosestSqrt) {
             // There is no need for another stack column
             if(stackCount <= largestStackSize) squareDiv = largestStackSize;
