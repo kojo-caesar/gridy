@@ -127,13 +127,17 @@ function Grid(items) {
 
         // Fitting itemCount into a square
         var nextClosestSqrt = getNextClosestSqrt(itemCount);
-        
+        console.log(nextClosestSqrt);
         if(stackCount <= nextClosestSqrt) {
             // There is no need for another stack column
             if(stackCount <= largestStackSize) squareDiv = largestStackSize;
             // If stackCount > largestStackSize means that we need to 
             // stretch the grid horizontally
             else squareDiv = nextClosestSqrt;
+        }
+        // Case where stackCount > nextClosestSqrt but still needs to have a single stack column
+        else if(largestStackSize <= nextClosestSqrt && stackCount/largestStackSize < 2) {
+            squareDiv = stackCount;
         }
         else {
             // There should be more than one stack column
