@@ -73,7 +73,35 @@ describe('Grid', function() {
       });
     });
   });
+  describe('with 5 stacks x 3 elements', function() {
+    it('should place each stack on a row', function() {
+      var grid = new Grid([
+        {id: 1, stack: 1}, {id: 2, stack: 1}, {id: 3, stack: 1},
+        {id: 4, stack: 2}, {id: 5, stack: 2}, {id: 6, stack: 2},
+        {id: 7, stack: 3}, {id: 8, stack: 3}, {id: 9, stack: 3},
+        {id: 10, stack: 4}, {id: 11, stack: 4}, {id: 12, stack: 4},
+        {id: 13, stack: 5}, {id: 14, stack: 5}, {id: 15, stack: 5}
+      ]);
 
+      expect(grid).to.have.positions({
+        1: [0, 0, 33.33, 20],
+        2: [33.33, 0, 33.33, 20],
+        3: [66.66, 0, 33.33, 20],
+        4: [0, 20, 33.33, 20],
+        5: [33.33, 20, 33.33, 20],
+        6: [66.66, 20, 33.33, 20],
+        7: [0, 40, 33.33, 20],
+        8: [33.33, 40, 33.33, 20],
+        9: [66.66, 40, 33.33, 20],
+        10: [0, 60, 33.33, 20],
+        11: [33.33, 60, 33.33, 25],
+        12: [66.66, 60, 33.33, 25],
+        13: [0, 80, 33.33, 25],
+        14: [33.33, 80, 33.33, 25],
+        15: [66.66, 80, 33.33, 25]
+      });
+    });
+  });
   describe('with 11 stacks x 4 elements', function() {
     it('should place 8 on the left and 3 on the right', function() {
       var grid = new Grid(_.times(11 * 4, function(i) {
