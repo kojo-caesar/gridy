@@ -127,7 +127,7 @@ function Grid(items) {
 
         // Fitting itemCount into a square
         var nextClosestSqrt = getNextClosestSqrt(itemCount);
-        
+        //console.log(nextClosestSqrt);
         if(stackCount <= nextClosestSqrt) {
             // There is no need for another stack column
             if(stackCount <= largestStackSize) squareDiv = largestStackSize;
@@ -160,6 +160,7 @@ function Grid(items) {
 
         width = 100 / numberOfColumns; // width of each item
         height = 100 / squareDiv; // height of each item
+
         // Creating grid with stacks from top to bottom and left to right and 
         // with items inside them from left to right
 
@@ -204,3 +205,24 @@ Grid.prototype.getPositions = function() {
 };
 
 module.exports = Grid;
+
+
+
+/*
+
+5 stack-uri de cate 3 elemente => 6x6. Solutia corecta este un grid de 3x5. 
+Problema este la bucata asta de cod
+
+else squareDiv = largestStackSize * cols;
+
+Cand intri pe branch-ul asta, ti-ai dat seama ca patratul ales anterior nu 
+este destul de incapator pentru toate stack-urile.  Formula aleasa de tine 
+va calcula latura unui patrat mult prea mare.
+
+
+5 3
+8 4
+10 7
+12 6
+20 2
+*/
