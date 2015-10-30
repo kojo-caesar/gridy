@@ -119,7 +119,6 @@ describe('Grid', function() {
       }
 
       expect(grid).to.have.positions(p);
-      console.log(p);
     });
   });
   describe('with 11 stacks x 4 elements', function() {
