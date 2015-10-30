@@ -220,19 +220,8 @@ module.exports = Grid;
 
 
 /*
+add tests for:
 
-5 stack-uri de cate 3 elemente => 6x6. Solutia corecta este un grid de 3x5. 
-Problema este la bucata asta de cod
-
-else squareDiv = largestStackSize * cols;
-
-Cand intri pe branch-ul asta, ti-ai dat seama ca patratul ales anterior nu 
-este destul de incapator pentru toate stack-urile.  Formula aleasa de tine 
-va calcula latura unui patrat mult prea mare.
-
-
-5 3
-8 4
 10 7
 12 6
 20 2
